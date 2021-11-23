@@ -21,6 +21,11 @@ https://cloud.google.com
 - PAG 144
 
 ---
+
+### VS code
+
+https://code.visualstudio.com/download
+---
 #### GITHUB 531-TERRAFORM
 
 ```sh
