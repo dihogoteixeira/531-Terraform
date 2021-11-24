@@ -1,6 +1,8 @@
 # CRIANDO CHAVE PARA CONTA DE SERVICO NA GCP:
-
 https://console.cloud.google.com/apis/credentials/serviceaccountkey
+
+# OBTENDO ID DO PROJETO NO CONSOLE GCP:
+https://console.cloud.google.com/home/dashboard
 
 - PÁGINA: 39
 ---
@@ -19,5 +21,6 @@ export GOOGLE_PROJECT={{VALOR}}
 ---
 ## REFS
 
-https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
-https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started
+- 
+- https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
+- https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started
