@@ -1,4 +1,4 @@
-`http://dontpad.com/7963_531_Terraform/`
+#### http://dontpad.com/7963_531_Terraform/
 ---
 
 ### INSTALANDO TERRAFORM
@@ -8,7 +8,7 @@ https://www.terraform.io/downloads.html
 ---
 #### [APOSTILA] - INSTALANDO TERRAFORM 
 
-- PAG 18 
+- PÁGINA: 18 
 
 ---
 #### CRIANDO SUA CONTA GCP
@@ -18,7 +18,7 @@ https://cloud.google.com
 ---
 #### [APOSTILA] - PROJETO FINAL APOSTILA
 
-- PAG 144
+- PÁGINA: 144
 
 ---
 

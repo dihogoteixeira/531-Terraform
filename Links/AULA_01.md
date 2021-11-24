@@ -1,28 +1,28 @@
-`http://dontpad.com/7963_531_Terraform/`
+#### http://dontpad.com/7963_531_Terraform/
 ---
 ### PLATAFORMA MOODLE
 
-https://moodle-prod.4linux.com.br/
+- https://moodle-prod.4linux.com.br/
 ---
 #### MATERIAL PDF
 
-https://moodle-prod.4linux.com.br/mod/filewithwatermark/view.php?id=2212
+- https://moodle-prod.4linux.com.br/mod/filewithwatermark/view.php?id=2212
 ---
 #### APPLIANCE
 
-https://moodle-prod.4linux.com.br/course/view.php?id=41§ion=1#tabs-tree-start
+- https://moodle-prod.4linux.com.br/course/view.php?id=41§ion=1#tabs-tree-start
 ---
 #### POST TEORIA DO TERRAFORM
 
-https://blog.4linux.com.br/teoria-do-terraform/
+- https://blog.4linux.com.br/teoria-do-terraform/
 ---
 #### EXTENSÕES
 
-https://terragrunt.gruntwork.io/
-https://github.com/runatlantis/atlantis
-https://github.com/adammck/terraform-inventory
-https://github.com/GoogleCloudPlatform/terraformer
-https://github.com/liamg/tfsec
+- https://terragrunt.gruntwork.io/
+- https://github.com/runatlantis/atlantis
+- https://github.com/adammck/terraform-inventory
+- https://github.com/GoogleCloudPlatform/terraformer
+- https://github.com/liamg/tfsec
 ---
 #### ALTERNATIVAS
 
