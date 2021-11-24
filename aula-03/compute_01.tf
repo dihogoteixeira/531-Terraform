@@ -15,7 +15,4 @@ resource "google_compute_instance" "web" {
     access_config {
     }
   }
-
-  depends_on = [google_compute_instance.database]
-
 }
