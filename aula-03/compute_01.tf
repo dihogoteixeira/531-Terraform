@@ -1,5 +1,4 @@
 resource "google_compute_instance" "web" {
-  provider = "hml" 
   name         = "web"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
