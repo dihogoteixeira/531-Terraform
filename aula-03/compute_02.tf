@@ -1,6 +1,5 @@
-resource "google_compute_instance" "web" {
-  provider = "hml" 
-  name         = "web"
+resource "google_compute_instance" "default2" {
+  name         = "test2"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
 
@@ -15,7 +14,4 @@ resource "google_compute_instance" "web" {
     access_config {
     }
   }
-
-  depends_on = [google_compute_instance.database]
-
 }
