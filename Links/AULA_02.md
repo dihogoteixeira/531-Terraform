@@ -1,34 +1,22 @@
-#### http://dontpad.com/7963_531_Terraform/
----
+#### INSTALANDO TERRAFORM
 
-### INSTALANDO TERRAFORM
+1. [Terraform Install](https://www.terraform.io/downloads.html "Terraform Install")
 
-https://www.terraform.io/downloads.html
-
----
-#### [APOSTILA] - INSTALANDO TERRAFORM 
-
-- PÁGINA: 18 
+Referência na apostila: `PÁGINA: 18`
 
 ---
 #### CRIANDO SUA CONTA GCP
 
-https://cloud.google.com
+2. [Create GCP account](https://cloud.google.com "Create GCP account")
 
 ---
-#### [APOSTILA] - PROJETO FINAL APOSTILA
+#### VSCODE DOWNLOAD (OPCIONAL)
 
-- PÁGINA: 144
+3. [VSCode Download](https://code.visualstudio.com/download "VSCode Download")
 
 ---
+#### PROJETO FINAL
 
-### VS code
+Referência na apostila: `PÁGINA: 144`
 
-https://code.visualstudio.com/download
----
-#### GITHUB 531-TERRAFORM
-
-```sh
-git clone https://github.com/dihogoteixeira/531-Terraform.git
-```
 ---
