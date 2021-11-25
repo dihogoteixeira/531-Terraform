@@ -1,39 +1,52 @@
-# CRIANDO CHAVE PARA CONTA DE SERVICO NA GCP:
-https://console.cloud.google.com/apis/credentials/serviceaccountkey
+#### CRIANDO CHAVE PARA CONTA DE SERVICO NA GCP
 
-# OBTENDO ID DO PROJETO NO CONSOLE GCP:
-https://console.cloud.google.com/home/dashboard
+1. [Create Service Account](https://console.cloud.google.com/apis/credentials/serviceaccountkey "Create Service Account")
 
-- PÁGINA: 39
+#### OBTENDO ID DO PROJETO NO CONSOLE GCP
+
+2. [Project ID](https://console.cloud.google.com/home/dashboard "Project ID")
+
+Referência na apostila: `PÁGINA 39`
+
 ---
-# EXPORTANDO VARIAVEIS DE AMBIENTE
+#### EXPORTANDO VARIAVEIS DE AMBIENTE
 
-Adicionar path do arquivo json que contem sua `ServiceAccountKey`:
+1. Adicionar caminho absoluto do arquivo.json que contem sua `ServiceAccountKey` obtida na criação da key:
 ```sh
-export GOOGLE_APPLICATION_CREDENTIALS={{VALOR}}
-
+export GOOGLE_APPLICATION_CREDENTIALS=/seu/path/para/arquivo.json
 ```
 
-Adicionar `ID` do projeto GCP:
+2. Adicionar `ID do projeto` GCP:
 ```sh
-export GOOGLE_PROJECT={{VALOR}}
+export GOOGLE_PROJECT=seu-project-id
+```
+
+---
+### ADICIONANDO VARIAVEIS DE AMBIENTE NO BASH PROFILE
+
+```sh
+sudo tee -a ~/.bashrc > /dev/null <<EOF
+# EXPORTING PROVIDER GCP VARS TO TERRAFORM
+export GOOGLE_APPLICATION_CREDENTIALS=/seu/path/para/arquivo.json
+export GOOGLE_PROJECT=seu-project-id
+EOF
 ```
 ---
-## REFS
+#### RESOLVENDO PROBLEMA DE EXPORT NO WINDOWS
 
-- https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference
-- https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started
-
-## PROBLEMAS DE EXPORT NO WINDOWS
-
-```js
+```go
 provider "google" {
   project     = "project-id"
-  credentials = file("/path/para/arquivo")
+  credentials = file("/path/para/arquivo.json")
 }
 ```
+---
+#### DOC DE REFERÊNCIA TERRAFORM
 
-## HCL REF
+1. [Getting Started](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started "Getting Started")
 
-https://www.terraform.io/docs/language/syntax/configuration.html
+2. [Provider Reference](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference "Provider Reference")
 
+3. [HCL Reference](https://www.terraform.io/docs/language/syntax/configuration.html "HCL Reference")
+
+---
