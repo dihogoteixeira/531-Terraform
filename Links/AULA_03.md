@@ -51,3 +51,37 @@ provider "google" {
 6. [terraform destroy](https://www.terraform.io/docs/cli/commands/destroy.html "terraform destroy")
 
 ---
+
+#### COMANDOS DE REFERENCIA
+
+1. Para inicializar o Provider, utilize o comando o comando de inicialização:
+
+```sh
+terraform init
+```
+
+2. O plano de execução do Terraform irá mostrar no terminal o que será criado ou modificado em sua infraestrutura,caso houver qualquer tipo de alteração de valores o Terraform irá mostrar qual o valor original e qual o novo valor que será inserido.
+
+O comando para planejar o que será criado é o seguinte:
+
+```sh
+terraform plan
+```
+
+3. Para aplicar de fato sua infraestrutura, o comando é o `apply`, que basicamente é a saída apresentada no comando do “plan”.
+
+```sh
+terraform apply 
+```
+
+O sub-comando `-auto-approve`, indica que não queremos confirmação para criar infraestrutura.
+
+4. Da mesma forma que se constrói infraestrutura, podemos deletar utilizando o sub-comando destroy.
+
+```sh
+terraform destroy
+```
+
+Da mesma forma que fizemos com o `apply`, aqui também podemos passar o subcomando `-auto-approve` para não pedir confirmação.
+
+---
