@@ -44,9 +44,10 @@ provider "google" {
 #### DOC DE REFERÊNCIA TERRAFORM
 
 1. [Getting Started](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/getting_started "Getting Started")
-
 2. [Provider Reference](https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference "Provider Reference")
-
-3. [HCL Reference](https://www.terraform.io/docs/language/syntax/configuration.html "HCL Reference")
+3. [HCL Reference Configuration](https://www.terraform.io/docs/language/syntax/configuration.html "HCL Reference Configuration")
+4. [terraform init](https://www.terraform.io/docs/cli/commands/init.html "terraform init")
+5. [terraform apply](https://www.terraform.io/docs/cli/commands/apply.html "terraform apply")
+6. [terraform destroy](https://www.terraform.io/docs/cli/commands/destroy.html "terraform destroy")
 
 ---
