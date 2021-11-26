@@ -1,0 +1,6 @@
+vpc_name = "tf-foo-vpc"
+nw_name = "tf-foo-subnet"
+nw_region = "us-central1"
+nw_cidr_range = "10.240.1.0/24"
+vm_zone = "us-central1-a"
+vm_type = "e2-small"
