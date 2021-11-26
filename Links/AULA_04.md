@@ -49,3 +49,21 @@ terraform state list
 ```sh
 terraform state rm
 ```
+#### Exercicio aula-04
+
+[Types variables](https://www.terraform.io/docs/language/expressions/types.html "Types variables")
+
+Para cada exercício, crie um novo diretório. 
+
+• Aproveite parar fazer seus testes, todo novo atributo que for criado, faça sempre o “terraform plan” para verificar a saída no output. 
+• Caso houver qualquer erro, leia atentamente o terminal. 
+• Lembre-se que o objetivo aqui é trabalhar com os diversos tipos de variáveis, ou seja, sempre utilize description e type (string, bool, list e etc) para cada uma das variáveis.
+
+Exercício 1.
+
+- Crie uma VPC não auto gerenciada. 
+- Crie uma sub-rede 10.240.1.0/24 e faça o vínculo com a VPC. 
+- Crie duas máquina virtual utilizando a rede criada. 
+- Crie dois discos de 20GB SSD com labels descritos acima e faça o vínculo com a máquina virtual 1. 
+- Crie dois discos de 40GB HDD com labels descritos acima e faça o vínculo com a máquina virtual 2. 
+- Destrua toda infraestrutura.
