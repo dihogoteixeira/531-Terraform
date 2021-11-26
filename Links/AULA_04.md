@@ -51,6 +51,8 @@ terraform state rm
 ```
 #### Exercicio aula-04
 
+[Types variables](https://www.terraform.io/docs/language/expressions/types.html "Types variables")
+
 Para cada exercício, crie um novo diretório. 
 
 • Aproveite parar fazer seus testes, todo novo atributo que for criado, faça sempre o “terraform plan” para verificar a saída no output. 
