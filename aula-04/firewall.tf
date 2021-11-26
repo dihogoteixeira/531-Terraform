@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "ingress-allow-22" {
     name          = "ingress-allow-22"
-    network       = google_compute_network.vpc_network.name
+    network       = google_compute_network.vpc.name
     allow {
         protocol  = "tcp"
         ports     = ["22"]
