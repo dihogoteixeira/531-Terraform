@@ -86,7 +86,7 @@ Copie o conteúdo da chave pública:
 $ cat ${HOME}/.ssh/4linux.pub
 ```
 
-Vá até o GitHub e clique em ![https://github.com/settings/profile](https://github.com/settings/profile) e no menu esquerdo selecione `SSH and GPG Keys`, colando o conteúdo da chave no formulário `New SSH Key`.
+Vá até o GitHub e clique em [https://github.com/settings/profile](https://github.com/settings/profile) e no menu esquerdo selecione `SSH and GPG Keys`, colando o conteúdo da chave no formulário `New SSH Key`.
 
 Para aqueles que estão utilizando uma segunda chave: deverá ser criado um arquivo dentro do seu `${HOME}` para suportar a outra chave.
 
