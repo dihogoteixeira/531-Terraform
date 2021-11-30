@@ -1,10 +1,12 @@
-- Creating GitHub repository
-- Remote State
-- Creating a Local Modules
-- Using local Modules
-- Versioning Module
-- Using remote Modules
-- Demo
+Topcs:
+
+1. Remote State
+2. Creating a Local Modules
+3. Using local Modules
+4. Creating GitHub repository
+5. Versioning Module
+6. Using remote Modules
+7. Demo
 
 ---
 #### NOTA
