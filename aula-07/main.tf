@@ -1,6 +1,6 @@
 # Instanciando módulos
-module "instances" {
-  source = "./gcp-instances"
+module "instance" {
+  source = "./gcp-instance"
  
   amount = 3
   name   = "web-app"
