@@ -4,7 +4,7 @@
 
 Link modulo `network` exemplo:
 ```sh
-https://github.com/dihogoteixeira/531-Terraform/tree/main/aula-06/modules/gcp-networks
+https://github.com/dihogoteixeira/tf-gcp-modules.git
 ```
 
 Modifique os valores do módulo de rede para suportar:
