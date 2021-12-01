@@ -13,6 +13,9 @@ resource "google_compute_instance" "this" {
 
   network_interface {
     network    = var.network
+    access_config {
+      
+    }
   }
 
   metadata_startup_script = "./scripts/us.sh"
