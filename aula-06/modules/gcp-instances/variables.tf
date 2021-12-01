@@ -32,8 +32,3 @@ variable "network" {
   type        = string
   default     = "default"
 }
-
-variable "subnetwork" {
-  description = "Qual subrede deseja utilizar"
-  type        = string
-}
