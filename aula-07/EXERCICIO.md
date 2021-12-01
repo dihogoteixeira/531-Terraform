@@ -2,11 +2,13 @@
 
 - Faça o clone do seu repositório que gerencia redes. 
 
-Link modulo `network` exemplo:
+Link modulo `gcp-network` de ***exemplo***:
 ```sh
 https://github.com/dihogoteixeira/tf-gcp-modules.git
 ```
-
+---
+#### NOTA: Crie um novo repositório para o seu módulo de Network
+---
 Modifique os valores do módulo de rede para suportar:
 
 - routing_mode.
