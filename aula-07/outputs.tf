@@ -1,5 +1,5 @@
 output "name" {
-  value = module.instance.name
+    value = module.instance.name
 }
 
 output "instance_id" {
