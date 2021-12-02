@@ -4,7 +4,7 @@ variable "amount" {
   default     = 1
 }
 
-variable "name" {
+variable "vm_name" {
   description = "Nome da instância"
   type        = string
 }
@@ -21,7 +21,7 @@ variable "zone" {
   default     = "us-central1-a"
 }
 
-variable "image" {
+variable "vm_image" {
   description = "Qual Sistema deseja utilizar"
   type        = string
   default     = "debian-cloud/debian-9"
