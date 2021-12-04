@@ -7,5 +7,8 @@
 
 # Ignore CLI configuration files
 terraform.rc
-.terraformrc
+*terraform.rc
+*.terraform
+terraform.tfstate
+terraform.tfstate.*
 .terraform.lock.hcl
