@@ -1,0 +1,14 @@
+# Editor
+*.vscode
+.swp
+
+# Local .terraform directories
+**/.terraform/*
+
+# Ignore CLI configuration files
+terraform.rc
+*terraform.rc
+*.terraform
+terraform.tfstate
+terraform.tfstate.*
+.terraform.lock.hcl
