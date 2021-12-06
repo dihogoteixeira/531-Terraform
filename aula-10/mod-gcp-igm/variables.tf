@@ -23,3 +23,9 @@ variable "instance_template" {
   description = "Depends_on do modulo"
   default = null
 }
+
+variable "resource_depends_on" {
+  type        = any
+  description = "Depends_on do modulo"
+  default     = null
+}

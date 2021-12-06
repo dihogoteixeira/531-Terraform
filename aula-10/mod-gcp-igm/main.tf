@@ -9,7 +9,7 @@ resource "google_compute_region_instance_group_manager" "this" {
     instance_template = var.instance_template
   }
 
-  target_size = length(var.target_size)
+  target_size = length(var.distribution_policy_zones)
 
   depends_on = [
     var.resource_depends_on
