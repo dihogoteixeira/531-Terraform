@@ -57,7 +57,7 @@ variable "automatic_restart" {
 
 variable "on_host_maintenance" {
   type = string
-  descriptin = "Host Maintanance da instancia"
+  description = "Host Maintanance da instancia"
   default = "MIGRATE"
 }
 
