@@ -1,10 +1,10 @@
 variable "balancing_mode" {
-  type  = string
+  type        = string
   description = "Balancing mode"
-  default = "RATE"
+  default     = "RATE"
 }
 
 variable "backends" {
-  type = list
+  type        = list
   description = "Backend config"
 }

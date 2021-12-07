@@ -1,32 +1,28 @@
-/*
-INSTANCIAMENTO DE MODULO VPC PUBLICO
-*/
+# Rede (VPC + Subnet)
 module "vpc" {
-    source = "terraform-google-modules/network/google"
-    version = "3.3.0"
+  source  = "terraform-google-modules/network/google"
+  version = "3.3.0"
 
-    project_id = "aula-02-333023"
-    network_name = "ha-project"
+  project_id   = "aula-02-333023"
+  network_name = "ha-final"
 
-    subnets = [
-        {
-            subnet_name   = "subnet-us"
-            subnet_ip     = "10.10.10.0/24"
-            subnet_region = "us-central1"
-        },
-        {
-            subnet_name   = "subnet-asia"
-            subnet_ip     = "10.10.20.0/24"
-            subnet_region = "asia-east1"
-        }
-    ]
+  subnets = [
+    {
+      subnet_name   = "subnet-us"
+      subnet_ip     = "10.10.10.0/24"
+      subnet_region = "us-central1"
+    },
+    {
+      subnet_name   = "subnet-asia"
+      subnet_ip     = "10.10.20.0/24"
+      subnet_region = "asia-east1"
+    }
+  ]
 }
 
-/*
-FIREWALL ROLE DEV
-*/
-resource "google_compute_firewall" "tf-fw-dev" {
-  name = "tf-fw-dev"
+# Firewall
+resource "google_compute_firewall" "fw-dev" {
+  name    = "fw-dev"
   network = module.vpc.network_self_link
   allow {
     protocol = "tcp"
@@ -35,89 +31,76 @@ resource "google_compute_firewall" "tf-fw-dev" {
   source_ranges = ["0.0.0.0/0"]
 }
 
-/*
-FIREWALL ROLE LOADBALACER
-*/
-resource "google_compute_firewall" "tf-fw-lb" {
-  name = "tf-fw-lb"
+resource "google_compute_firewall" "fw-lb" {
+  name    = "fw-lb"
   network = module.vpc.network_self_link
   allow {
     protocol = "tcp"
-    ports = ["80", "443"]
+    ports    = ["80", "443"]
   }
   source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
 }
 
-/* GET INFO DATASOURCE
-PRECISO REGISTRAR O SELF_LINK DAS SUBNETS CORRETAMENTE,
-COMO ESTOU USANDO MÓDULOS, PRECISO BUSCAR POR UM DATASOURCE
-*/
+
+# Infos da subnet
+# Preciso registrar o self_link das subnets corretamente, como estou usando modulo
+# estou buscando por um datasource.
 data "google_compute_subnetwork" "subnet-us" {
-  name = "subent-us"
-  region = "us-central1"
-  depends_on = [
-    module.vpc
-  ]
+  name       = "subnet-us"
+  region     = "us-central1"
+  depends_on = [module.vpc]
 }
 
 data "google_compute_subnetwork" "subnet-asia" {
-  name = "subnet-asia"
-  region = "asia-east1"
-  depends_on = [
-    module.vpc
-  ]
+  name       = "subnet-asia"
+  region     = "asia-east1"
+  depends_on = [module.vpc]
 }
 
-/*
-INSTNCE TEMPLATES
-*/
+# Templates
 module "instance-template-us" {
-  source = "./mod-gcp-it"
-  name = "us"
+  source                  = "./mod-gcp-it"
+  name                    = "us"
   metadata_startup_script = "./scripts/us.sh"
-  network = module.vpc.network_self_link
-  subnetwork = data.google_compute_subnetwork.subnet-us.self_link
+  network                 = module.vpc.network_self_link
+  subnetwork              = data.google_compute_subnetwork.subnet-us.self_link
 }
 
 module "instance-template-asia" {
-  source = "./mod-gcp-it"
-  name = "asia"
+  source                  = "./mod-gcp-it"
+  name                    = "asia"
   metadata_startup_script = "./scripts/asia.sh"
-  network = module.vpc.network_self_link
-  subnetwork = data.google_compute_subnetwork.subnet-asia.self_link
+  network                 = module.vpc.network_self_link
+  subnetwork              = data.google_compute_subnetwork.subnet-asia.self_link
 }
 
-/*
-INSTANCE GROUPS
-*/
-module "igm-us" {
-  source = "./mod-gcp-igm"
-  name = "igm-us"
-  base_instance_name = "us-web"
-  region = "us-central1"
-  instance_template = module.instance-template-us.self_link
+# Instance Groups
+module "mig-us" {
+  source                    = "./mod-gcp-igm"
+  name                      = "mig-us"
+  base_instance_name        = "us-web"
+  region                    = "us-central1"
+  instance_template         = module.instance-template-us.self_link
   distribution_policy_zones = ["us-central1-a", "us-central1-b"]
-  resource_depends_on = [module.vpc]
+  resource_depends_on       = [module.vpc]
 }
 
-module "igm-asia" {
-  source = "./mod-gcp-igm"
-  name = "igm-asia"
-  base_instance_name = "asia-web"
-  region = "asia-east1"
-  instance_template = module.instance-template-asia.self_link
+module "mig-asia" {
+  source                    = "./mod-gcp-igm"
+  name                      = "mig-asia"
+  base_instance_name        = "asia-web"
+  region                    = "asia-east1"
+  instance_template         = module.instance-template-asia.self_link
   distribution_policy_zones = ["asia-east1-a"]
-  resource_depends_on = [module.vpc]
+  resource_depends_on       = [module.vpc]
 }
 
-/*
-LOADBALANCER
-*/
+# Loadbalance
 module "mod-lb" {
   source = "./mod-gcp-lb"
   backends = [
-    module.igm-us.instance_group,
-    module.igm-asia.instance_group
+    module.mig-us.instance_group,
+    module.mig-asia.instance_group
   ]
 }
 
@@ -125,14 +108,14 @@ output "lb-ip" {
   value = module.mod-lb.ip
 }
 
-/*
-BASTION
-*/
+
+# Demo count + if 
+
 resource "google_compute_instance" "bastion" {
   count = terraform.workspace == "prd" ? 3 : 2
-  name = format("%s-%s", "bastion", count.index)
+  name         = format("%s-%s", "bastion", count.index)
   machine_type = "e2-medium"
-  zone = "us-central1-a"
+  zone         = "us-central1-a"
 
   boot_disk {
     initialize_params {

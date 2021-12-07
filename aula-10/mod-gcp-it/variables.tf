@@ -4,9 +4,9 @@ variable "name" {
 }
 
 variable "desc" {
-  type = string
+  type        = string
   default = ""
-  description = "Descrição do tnstance template"
+  description = "Descricao do instance template"
 }
 
 variable "machine_type" {
@@ -17,26 +17,26 @@ variable "machine_type" {
 
 variable "instance_description" {
   default = ""
-  type = string
-  description = "(optional) describe your variable"
-}
-
-variable "tags" {
-  type = list
-  description = "Tags da instancia"
-  default = []
+  type        = string
+  description = "Descricao da instancia"
 }
 
 variable "labels" {
-  type = map
+  type        = map
   description = "Labels da instancia"
-  default = {}  
+  default     = {}
+}
+
+variable "tags" {
+  type        = list
+  description = "Tags da instancia"
+  default     = []
 }
 
 variable "can_ip_forward" {
-  type = bool
+  type        = bool
   description = "Roteamento de pacotes"
-  default = false
+  default     = false
 }
 
 variable "network" {
@@ -49,16 +49,22 @@ variable "subnetwork" {
   description = "Subnet da instancia"
 }
 
-variable "automatic_restart" {
-  type = bool
-  description = "Automatic restart da instancia"
-  default = true
+variable "metadata_startup_script" {
+  type        = string
+  description = "Caminho do script shell do userdata"
+  default      = null
 }
 
 variable "on_host_maintenance" {
-  type = string
+  type        = string
   description = "Host Maintanance da instancia"
-  default = "MIGRATE"
+  default     = "MIGRATE"
+}
+
+variable "automatic_restart" {
+  type        = bool
+  description = "Automatic restart da instancia"
+  default     = true
 }
 
 variable "source_image" {
@@ -77,12 +83,6 @@ variable "boot" {
   type        = bool
   description = "Boot disk"
   default     = true
-}
-
-variable "metadata_startup_script" {
-  type        = string
-  description = "Caminho do script shell do userdata"
-  default      = null
 }
 
 variable "ssh_keys" {
