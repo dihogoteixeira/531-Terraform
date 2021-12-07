@@ -4,24 +4,23 @@ variable "name" {
 }
 
 variable "base_instance_name" {
-  type = string
-  description = "Prefixo das instancias por exeplo: app"
+  type        = string
+  description = "Prefixo das instancias"
 }
 
 variable "region" {
-  type = string
+  type        = string
   description = "Região"
 }
 
 variable "distribution_policy_zones" {
-  type = list(string)
-  description = "Zonas do grupo de instancias"
+  type        = list(string)
+  description = "Zonas do grupo"
 }
 
 variable "instance_template" {
-  type = any
-  description = "Depends_on do modulo"
-  default = null
+  type        = string
+  description = "Self link do template"
 }
 
 variable "resource_depends_on" {
